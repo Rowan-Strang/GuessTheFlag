@@ -9,27 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 20) {
-            Spacer()
-            Spacer()
-            HStack {
-                Spacer()
-                Text("Top Left")
-                Spacer()
-                Text("Top Right")
-                Spacer()
-            }
-            Spacer()
-            HStack {
-                Spacer()
-                Text("Boottom Left")
-                Spacer()
-                Text("Bottom Right")
-                Spacer()
-            }
-            Spacer()
-            Spacer()
+        ZStack{
+            Color.secondary
+                .frame(minWidth: 200, maxWidth: .infinity, maxHeight: 200)
+            Text("MyContent")
         }
+        .background(.blue)
     }
 }
 
