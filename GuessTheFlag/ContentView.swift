@@ -9,8 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("This is rowan")
-        Text("This is another text view")
+        VStack(spacing: 20) {
+            Spacer()
+            Spacer()
+            HStack {
+                Spacer()
+                Text("Top Left")
+                Spacer()
+                Text("Top Right")
+                Spacer()
+            }
+            Spacer()
+            HStack {
+                Spacer()
+                Text("Boottom Left")
+                Spacer()
+                Text("Bottom Right")
+                Spacer()
+            }
+            Spacer()
+            Spacer()
+        }
     }
 }
 
