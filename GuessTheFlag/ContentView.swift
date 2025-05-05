@@ -9,10 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("My Content")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .foregroundStyle(.white)
-            .background(.green.gradient)
+        VStack{
+            Button("Button One") {}
+                .buttonStyle(.bordered)
+            Button("Button Two", role: .destructive) {}
+                .buttonStyle(.bordered)
+            Button("Button Three") {}
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+            Button("Button Four", role: .destructive) {}
+                .buttonStyle(.borderedProminent)
+            
+        }
+    }
+    
+    func excuteDelete(){
+        print("now deleting")
     }
 }
 
