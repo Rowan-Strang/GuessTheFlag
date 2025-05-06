@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack{
-            Button("Button One") {}
-                .buttonStyle(.bordered)
-            Button("Button Two", role: .destructive) {}
-                .buttonStyle(.bordered)
-            Button("Button Three") {}
-                .buttonStyle(.borderedProminent)
-                .tint(.green)
-            Button("Button Four", role: .destructive) {}
-                .buttonStyle(.borderedProminent)
-            
+        Button {
+            print("Button was pressed")
+        } label: {
+            Label("Edit", systemImage: "pencil")
+                .padding()
+                .frame(width: 100, height: 400)
+                .background(
+                    Circle()
+                        .fill(Color.green)
+                )
+                .foregroundStyle(.white)
         }
     }
     
