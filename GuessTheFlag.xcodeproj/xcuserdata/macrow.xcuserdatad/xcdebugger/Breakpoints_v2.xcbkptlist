@@ -20,34 +20,6 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "BA1E1E9E-C9C8-4E06-989C-113FABAD6315 - 770c36ddf030c19b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GuessTheFlag.ContentView.body.getter : some"
-                  moduleName = "GuessTheFlag.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macrow/Code/x%20code%20beginnings/GuessTheFlag/GuessTheFlag/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18">
-               </Location>
-               <Location
-                  uuid = "BA1E1E9E-C9C8-4E06-989C-113FABAD6315 - c491b8502e3a9ae2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.Button&lt;SwiftUI.Image&gt;&gt;)&gt;&gt;)&gt; in GuessTheFlag.ContentView.body.getter : some"
-                  moduleName = "GuessTheFlag.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macrow/Code/x%20code%20beginnings/GuessTheFlag/GuessTheFlag/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18">
-               </Location>
-               <Location
                   uuid = "BA1E1E9E-C9C8-4E06-989C-113FABAD6315 - 770c36ddf030c1ba"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"

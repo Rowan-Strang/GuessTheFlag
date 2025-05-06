@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    var countries = ["estonia", "france", "germany", "ireland", "italy", "nigeria", "poland", "spain", "uk", "us"].shuffled()
-    var correctAnswer = Int.random(in: 0...2)
+    @State private var countries = ["estonia", "france", "germany", "ireland", "italy", "nigeria", "poland", "spain", "uk", "us"].shuffled()
+    @State private var correctAnswer = Int.random(in: 0...2)
     
     @State private var showingScore = false
     @State private var scoreTitle = ""
@@ -25,7 +25,6 @@ struct ContentView: View {
             .ignoresSafeArea()
             VStack(spacing: 30){
                 VStack{
-                    Text(scoreTitle)
                     Text("Tap the flag of")
                         .foregroundStyle(.white)
                     Text(countries[correctAnswer].capitalized)
@@ -41,6 +40,11 @@ struct ContentView: View {
                 }
             }
         }
+        .alert(scoreTitle, isPresented: $showingScore){
+            Button("Continue", action: askQuestion)
+        } message: {
+            Text("Your score is???")
+        }
     }
     
     func flagTapped(_ number: Int){
@@ -50,6 +54,11 @@ struct ContentView: View {
             scoreTitle = "Wrong"
         }
         showingScore = true
+    }
+    
+    func askQuestion(){
+        countries.shuffle()
+        correctAnswer = Int.random(in: 1...2)
     }
 }
 
