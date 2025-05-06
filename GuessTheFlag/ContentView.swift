@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var countries = ["estonia", "france", "germany", "ireland", "italy", "nigeria", "poland", "spain", "uk", "us"].shuffled()
+    @State private var countries = ["estonia", "france", "germany", "ireland", "italy", "nigeria", "poland", "spain", "uk", "us", "russia"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
     
     @State private var showingScore = false
@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             LinearGradient(
-                gradient: Gradient(colors: [.blue.opacity(0.6), .blue]),
+                gradient: Gradient(colors: [.blue.opacity(0.6), .black]),
                 startPoint: .top,
                 endPoint: .bottom
             )
@@ -27,8 +27,11 @@ struct ContentView: View {
                 VStack{
                     Text("Tap the flag of")
                         .foregroundStyle(.white)
+                        .font(.subheadline.weight(.heavy))
+                    
                     Text(countries[correctAnswer].capitalized)
                         .foregroundStyle(.white)
+                        .font(.largeTitle.weight(.semibold))
                 }
                 
                 ForEach(0..<3) { number in
