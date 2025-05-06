@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             LinearGradient(
-                gradient: Gradient(colors: [.blue.opacity(0.6), .black]),
+                gradient: Gradient(colors: [.blue.opacity(0.8), .black]),
                 startPoint: .top,
                 endPoint: .bottom
             )
@@ -39,6 +39,8 @@ struct ContentView: View {
                         flagTapped(number)
                     } label: {
                         Image(countries[number])
+                            .clipShape(.capsule)
+                            .shadow(radius: 5)
                     }
                 }
             }
@@ -61,7 +63,7 @@ struct ContentView: View {
     
     func askQuestion(){
         countries.shuffle()
-        correctAnswer = Int.random(in: 1...2)
+        correctAnswer = Int.random(in: 0...2)
     }
 }
 
