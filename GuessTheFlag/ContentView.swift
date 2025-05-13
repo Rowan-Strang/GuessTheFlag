@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct Title: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle.bold())
+            .foregroundStyle(.white)
+    }
+}
+
+extension View {
+    func titleStyle() -> some View {
+        modifier(Title())
+    }
+}
+
 struct FlagImage: View {
     var text: String
     
@@ -51,8 +65,9 @@ struct ContentView: View {
                     .foregroundStyle(.secondary)
                     .font(.subheadline.weight(.heavy))
                 Text("Guess the Flag")
-                    .font(.largeTitle.bold())
-                    .foregroundStyle(.white)
+                    .titleStyle()
+//                    .font(.largeTitle.bold())
+//                    .foregroundStyle(.white)
                 VStack(spacing: 20){
                     VStack{
                         Text("Tap the flag of")
@@ -60,8 +75,9 @@ struct ContentView: View {
                             .font(.subheadline.weight(.heavy))
                         
                         Text(countries[correctAnswer].capitalized)
-                            .foregroundStyle(.white )
-                            .font(.largeTitle.weight(.semibold))
+                            .titleStyle()
+//                            .foregroundStyle(.white )
+//                            .font(.largeTitle.weight(.semibold))
                     }
                     
                     ForEach(0..<3) { number in
