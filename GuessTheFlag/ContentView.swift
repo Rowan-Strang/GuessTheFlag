@@ -43,6 +43,8 @@ struct ContentView: View {
     @State private var rightScore = 0
     @State private var flagTapped = 0
     @State private var round = 1
+    @State private var animationAmount = 0.0
+    @State private var buttonOpacity = 1.0
     
     
     var body: some View {
@@ -89,13 +91,15 @@ struct ContentView: View {
 //                                .clipShape(.capsule)
 //                                .shadow(radius: 5)
                         }
+                        .opacity(number != flagTapped ? buttonOpacity : 1)
+                        .rotation3DEffect(.degrees(number == flagTapped ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 40)
                 .background(.ultraThinMaterial)
                 .clipShape(.rect(cornerRadius: 20))
-                
+            
                 Spacer()
                 Spacer()
                 
@@ -136,6 +140,13 @@ Wrong: \(wrongScore)
     func flagTapped(_ number: Int){
         flagTapped = number
         round += 1
+        withAnimation(.easeInOut(duration: 4)){
+            buttonOpacity = 0.25
+        }
+        
+        withAnimation(.spring(duration: 1, bounce: 0.5)) {
+                        animationAmount += 360
+                    }
         if number == correctAnswer {
             scoreTitle = "Correct"
             rightScore += 1
@@ -151,6 +162,7 @@ Wrong: \(wrongScore)
     }
     
     func askQuestion(){
+        buttonOpacity = 1.0
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
